@@ -1,0 +1,7 @@
+{
+    "server": "http://SERVER:3010",
+    "port" : 3030,
+    "serialEnabled": true,
+    "serialPort": 9600,
+    "serialDevice": "/dev/ttyACM0"
+}
