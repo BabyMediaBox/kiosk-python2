@@ -88,15 +88,6 @@ try:
 		print "http server running on", PORT
 		httpd.serve_forever()
 		
-
-		while True:
-			if serialEnabled:
-				data = ser.read(3)
-			
-				if len(data) > 0:
-					print 'Button:', data.strip()
-					result = requests.post(url=serverUri+'/button/'+data.strip())
-					
 except:
 	try:
 		httpd.socket.close()
