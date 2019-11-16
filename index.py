@@ -76,6 +76,10 @@ try:
 		serverUri=Config['server']
 		serialEnabled=Config['serialEnabled']
 
+
+		vol=subprocess.check_output(["./getVolume.sh"])
+		result = requests.post(serverUri+'/kiosk-volume', data={'volume':vol.replace('%','')})
+
 		if serialEnabled:
 			ser = serial.Serial(Config['serialDevice'], int(Config['serialPort']), timeout=0.5)
 
@@ -91,7 +95,6 @@ try:
 			
 				if len(data) > 0:
 					print 'Button:', data.strip()
-					url=serverUri+'/button/'+data.strip() 
 					result = requests.post(url=serverUri+'/button/'+data.strip())
 					
 except:
