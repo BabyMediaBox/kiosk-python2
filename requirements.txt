@@ -4,7 +4,7 @@ future==0.18.2
 idna==2.8
 iso8601==0.1.12
 pyserial==3.4
-PyYAML==5.1.2
+PyYAML==5.4
 requests==2.22.0
 serial==0.0.97
 urllib3==1.25.7
